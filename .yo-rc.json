@@ -1,0 +1,28 @@
+{
+  "generator-angm": {
+    "appName": "github-analytics",
+    "angularCookies": true,
+    "angularAnimate": true,
+    "angularSanitize": true,
+    "angularBootstrap": true,
+    "angularMaterial": true,
+    "modules": [
+      {
+        "name": "analysis"
+      },
+      {
+        "name": "history"
+      }
+    ],
+    "menu": [
+      {
+        "link": "analysis",
+        "title": "Analysis"
+      },
+      {
+        "link": "history",
+        "title": "History"
+      }
+    ]
+  }
+}
