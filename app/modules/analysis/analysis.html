@@ -1,7 +1,35 @@
 <div class="md-padding" flex layout-sm="column">
     <md-card>
         <md-card-content>
-            <h2 class="md-title">Content from: analysis page</h2>
+            <div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage" >
+                <form name="githubForm">
+                    <md-content layout="column" layout-padding="">
+                        <md-input-container class="md-block">
+                            <label>Repository</label>
+                            <input md-maxlength="100" required  name="repository" ng-model="vm.repository.selected">
+                            <div ng-messages="githubForm.repository.$error">
+                              <div ng-message="required">This is required. Example: https://github.com/owner/name</div>
+                              <div ng-message="md-maxlength">The description must be less than 100 characters long.</div>
+                            </div>
+                        </md-input-container>
+                        <div layout="column" layout-align="center center">
+                            <div>
+                                <md-button type="submit" class="md-fab md-primary" aria-label="Eat cake" ng-click="vm.click()">
+                                    <ng-md-icon icon="search"></ng-md-icon>
+                                </md-button>  
+                            </div>                          
+                            <div>
+                                <md-progress-circular ng-disabled="!vm.activated"  ng-show="vm.activated"class="md-accent md-hue-1" md-diameter="60"></md-progress-circular>
+                            </div>
+                        </div>
+                    </md-content>
+                </form>
+            </div>
+        </md-card-content>
+    </md-card>
+    <md-card>
+         <md-card-content>
+            <h2>Résultats</h2>
         </md-card-content>
     </md-card>
 </div>

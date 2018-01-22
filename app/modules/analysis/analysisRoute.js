@@ -8,7 +8,7 @@
  * Route of the app
  */
 
-angular.module('analysis')
+angular.module('github-analytics')
 	.config(['$stateProvider', function ($stateProvider) {
 		
 		$stateProvider
@@ -17,7 +17,5 @@ angular.module('analysis')
 				templateUrl: 'app/modules/analysis/analysis.html',
 				controller: 'AnalysisCtrl',
 				controllerAs: 'vm'
-			});
-
-		
+			});		
 	}]);

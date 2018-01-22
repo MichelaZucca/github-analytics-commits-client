@@ -10,7 +10,7 @@
 	 */
 
   	angular
-		.module('analysis')
+		.module('github-analytics')
 		.factory('AnalysisService', Analysis);
 		// Inject your dependencies as .$inject = ['$http', 'someSevide'];
 		// function Name ($http, someSevide) {...}

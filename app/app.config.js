@@ -15,9 +15,9 @@
 		.config(configure)
 		.run(runBlock);
 
-	configure.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider'];
+	configure.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider','$mdThemingProvider'];
 
-	function configure($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+	function configure($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
 
 		$locationProvider.hashPrefix('!');
 
@@ -28,6 +28,8 @@
 		$urlRouterProvider
 			.otherwise('/dashboard');
 		
+		$mdThemingProvider
+			.theme('input'); 
 	}
 
 	runBlock.$inject = ['$rootScope'];

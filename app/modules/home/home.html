@@ -40,41 +40,11 @@
             <md-button ng-click="layout.toggleSidenav('left')" hide-gt-md aria-label="Menu">
                 <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
-            <h3>github-analytics</h3>
-            <span flex></span>
-            <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-                <ng-md-icon icon="search"></ng-md-icon>
-            </md-button>
-            <md-menu>
-                <md-button aria-label="Open Settings" ng-click="layout.openMenu($mdOpenMenu, $event)">
-                    <md-icon> more_vert </md-icon>
-                </md-button>
-                <md-menu-content width="4">
-                    <md-menu-item>
-                        <md-button ng-click="layout.changeProfile($event)">
-                            <md-icon>face</md-icon>
-                            Profile
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button ng-click="layout.changePassword()">
-                            <md-icon>lock</md-icon>
-                            Password
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-divider></md-menu-divider>
-                    <md-menu-item>
-                        <md-button ng-click="layout.logOut()">
-                            <md-icon>power_settings_new</md-icon>
-                            Logout
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
+            <h3>Github Analytics</h3>        
         </div>
     </md-toolbar>
     <md-toolbar class="md-hue-1" ng-show="showSearch">
-        <div class="md-toolbar-tools">
+       <!-- <div class="md-toolbar-tools">
             <md-button ng-click="showSearch = !showSearch" aria-label="Back">
                 <ng-md-icon icon="arrow_back"></ng-md-icon>
             </md-button>
@@ -86,6 +56,7 @@
                 <input ng-model="search.who" placeholder="Search ...">
             </md-input-container>
         </div>
+    -->
     </md-toolbar>
     <md-content layout="column" flex md-scroll-y style="background-color:#DCDCDC">
         <div ui-view></div>
