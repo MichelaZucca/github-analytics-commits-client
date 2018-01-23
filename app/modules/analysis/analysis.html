@@ -10,6 +10,7 @@
                             <div ng-messages="githubForm.repository.$error">
                               <div ng-message="required">This is required. Example: https://github.com/owner/name</div>
                               <div ng-message="md-maxlength">The description must be less than 100 characters long.</div>
+                              <div ng-show="vm.isError">{{vm.error}}</div>
                             </div>
                         </md-input-container>
                         <div layout="column" layout-align="center center">
@@ -28,8 +29,95 @@
         </md-card-content>
     </md-card>
     <md-card>
-         <md-card-content>
-            <h2>Résultats</h2>
+         <md-card-content ng-show="vm.resultIsActivated">
+            <div layout="column" layout-margin layout-sm="column" layout-align="center center">
+                <md-toolbar md-scroll-shrink>
+                    <div class="md-toolbar-tools" layout-align="center center">Results</div>
+                </md-toolbar>
+            <div flex>
+                <p>L'analyse montre l'évolution des commits et de leurs contenus pour le site 
+                    <b>{{vm.results.name}}</b> sur un total de <b>{{vm.results.numberOfCommits}}</b> commits.
+                </p>
+                <p>Description du repo :{{vm.results.description}}.</p>
+            </div>
+            <md-toolbar md-scroll-shrink>
+                <div class="md-toolbar-tools" layout-align="center center">Addition</div>
+            </md-toolbar>
+            <div layout="column">
+                <div>
+                    <p>Dans cette espace se trouve les explications relatives au graphique des ajouts dans les commits</p>
+                </div>
+                <div>
+                   <!-- <canvas 
+                        id="lineDeletion" 
+                        class="chart chart-line" 
+                        chart-data="vm.additionnData" 
+                        chart-labels="vm.lineChart.labels"
+                        chart-series="vm.additionSeries"
+                        chart-options="vm.lineChart.options" 
+                        chart-dataset-override="vm.lineChart.datasetOverride" 
+                        chart-click="vm.lineChart.onClick" 
+                        chart-colors="vm.lineChart.colors">
+                    </canvas> -->
+                    <canvas 
+                        id="barAddition" 
+                        class="chart-bubble" 
+                        chart-data="vm.dataBubble"
+                        chart-series="vm.seriresBubble"
+                        
+                        chart-labels="vm.seriresBubble"
+                        chart-options="vm.bubblesChart.options" >
+                    </canvas> 
+                </div>
+            </div>
+            <div layout="row">
+                <div flex=60>
+                    <canvas
+                        id="barAddition" 
+                        class="chart chart-bar"
+                        chart-data="vm.additionnDataBar" 
+                        chart-labels="vm.BarChart.labels" 
+                        chart-options="vm.BarChart.options">
+                    </canvas> 
+                </div>   
+                <div flex=40>    
+                    <p>Dans cette espace se trouve les explications relatives au graphique des ajouts dans les commits</p>
+                </div>
+            </div>
+            <md-toolbar md-scroll-shrink>
+                <div class="md-toolbar-tools" layout-align="center center">Deletion</div>
+            </md-toolbar>
+            <div layout="row">
+                <div flex=40>
+                    <p>Dans cette espace se trouve les explications relatives au graphique des suppressions dans les commits</p>
+                </div>
+                <div flex=60>
+                    <canvas 
+                        id="lineDeletion" 
+                        class="chart chart-line" 
+                        chart-data="vm.deletionData" 
+                        chart-labels="vm.lineChart.labels"
+                        chart-series="vm.deletionSeries"
+                        chart-options="vm.lineChart.options" 
+                        chart-dataset-override="vm.lineChart.datasetOverride" 
+                        chart-click="vm.lineChart.onClick" >
+                    </canvas>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex=60>
+                  <!--  <canvas
+                        id="barAddition" 
+                        class="chart chart-bar"
+                        chart-data="vm.dataSet"
+                        chart-options="vm.BarChart.options">
+                    </canvas> -->
+                </div>   
+                <div flex=40>    
+                    <p>Dans cette espace se trouve les explications relatives au graphique des ajouts dans les commits</p>
+                </div>
+            </div>  
+        </div>
         </md-card-content>
     </md-card>
 </div>

@@ -9,7 +9,7 @@
 	 * Module of the app
 	 */
 
-  	angular.module('analysis', []).config(function($mdThemingProvider) {
+  	angular.module('analysis', ['chart.js']).config(function($mdThemingProvider) {
 
 		// Configure a dark theme with primary foreground yellow
 	

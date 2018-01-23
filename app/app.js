@@ -11,6 +11,7 @@
 	 */
 
 	angular.module('github-analytics', [
+		'chart.js',
 		'ngResource',
 		'ngAria',
 		'ui.bootstrap',
